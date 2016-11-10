@@ -1,9 +1,11 @@
 # React Authentication for Front End Masters
 
-## Client Side Session Challenges
+## Implementing Authentication Challenges
 
-* Create an `isAuthenticated` method in the `AuthService` to check whether or not the user's JWT is expired
-* Conditionally hide and show the **Log In** and **Log Out** links and buttons based on whether the user's JWT is expired
+* Complete the `onLoginSubmit` and `onSignupSubmit` methods to make `POST` requests (sending the user's credentials) to the `api/users/authenticate` and `api/users` endpoints respectively. The methods should call a `login` and `signup` method in the `AuthService`
+* Provide a method in the `AuthService` which saves the returned JWT in local storage
+* Create a `logout` method which removes the user's JWT from local storage
+* Provide buttons for **Log In** and **Log Out** in the home view and the toolbar
 
 ## Running the App
 

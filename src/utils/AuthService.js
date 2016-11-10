@@ -29,13 +29,6 @@ export default class AuthService extends EventEmitter {
     return this._doAuthentication('users', { username, email, password })
   }
 
-  // add an isAuthenticated method to check whether
-  // the user's JWT has expired
-
-  isAdmin() {
-    return jwtDecode(this.getToken()).scope === 'admin'
-  }
-
   finishAuthentication(token) {
     localStorage.setItem('token', token)
   }
@@ -50,26 +43,11 @@ export default class AuthService extends EventEmitter {
     localStorage.removeItem('token')
   }
 
-  _checkStatus(response) {
-    // raises an error in case response status is not a success
-    if (response.status >= 200 && response.status < 300) {
-      return response
-    } else {
-      var error = new Error(response.statusText)
-      error.response = response
-      return error
-    }
-  }
-
   fetch(url, options) {
     // performs api calls sending the required authentication headers
     const headers = {
       'Accept': 'application/json',
       'Content-Type': 'application/json'
-    }
-
-    if (this.isAuthenticated()) {
-      headers['Authorization'] = 'Bearer ' + this.getToken()
     }
 
     return fetch(url, {

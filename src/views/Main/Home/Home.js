@@ -19,7 +19,6 @@ export class Home extends React.Component {
   }
 
   render() {
-    const { isAuthenticated } = this.props.auth
     return (
       <Jumbotron>
         <h1>Welcome!</h1>
