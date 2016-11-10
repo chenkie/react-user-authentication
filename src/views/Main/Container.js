@@ -35,11 +35,6 @@ export class Container extends React.Component {
             </Navbar.Brand>
           </Navbar.Header>
           <Nav>
-            { auth.isAuthenticated() &&
-              <LinkContainer to={'/profile'}>
-                <NavItem>Profile</NavItem>
-              </LinkContainer>
-            }
           </Nav>
           <Nav pullRight>
             { auth.isAuthenticated() ? (

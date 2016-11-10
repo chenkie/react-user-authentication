@@ -35,7 +35,7 @@ export class Login extends React.Component {
             return
           }
           this.props.auth.finishAuthentication(result.token)
-          this.context.router.push('/profile')
+          this.context.router.push('/home')
         })
     }
   }

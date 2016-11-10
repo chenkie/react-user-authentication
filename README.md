@@ -1,9 +1,9 @@
 # React Authentication for Front End Masters
 
-## User Profile Challenges
+## Client Side Session Challenges
 
-* Use the payload from the JWT to generate a user profile
-* Display the user's gravatar, username, and email, along with the full JWT payload in the **Profile** view
+* Create an `isAuthenticated` method in the `AuthService` to check whether or not the user's JWT is expired
+* Conditionally hide and show the **Log In** and **Log Out** links and buttons based on whether the user's JWT is expired
 
 ## Running the App
 
