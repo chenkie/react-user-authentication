@@ -29,19 +29,16 @@ export default class AuthService extends EventEmitter {
     return this._doAuthentication('users', { username, email, password })
   }
 
-  finishAuthentication(token) {
-    localStorage.setItem('token', token)
-  }
+  // provide a finishAuthentication method which
+  // saves the token in local storage
 
   getToken() {
     // Retrieves the user token from localStorage
     return localStorage.getItem('token')
   }
 
-  logout() {
-    // Clear user token and profile data from localStorage
-    localStorage.removeItem('token')
-  }
+  // provide a logout method which clears the token
+  // from local storage
 
   fetch(url, options) {
     // performs api calls sending the required authentication headers

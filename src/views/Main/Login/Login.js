@@ -28,15 +28,9 @@ export class Login extends React.Component {
     event.preventDefault()
     const { user, password } = this.state
     if (user && password) {
-      this.props.auth.login(user, password)
-        .then(result => {
-          if (!result.token) {
-            this.setState({loginError: result.message})
-            return
-          }
-          this.props.auth.finishAuthentication(result.token)
-          this.context.router.push('/home')
-        })
+      // call the login method from this.props.auth
+      // and pass the user and password
+      // display any errors if no result.token comes back
     }
   }
 
@@ -44,15 +38,9 @@ export class Login extends React.Component {
     event.preventDefault()
     const { username, email, password } = this.state
     if (username && email && password) {
-      this.props.auth.login(username, email, password)
-        .then(result => {
-          if (!result.token) {
-            this.setState({signupError: result.message})
-            return
-          }
-          this.props.auth.finishAuthentication(result.token)
-          this.context.router.push('/profile')
-        })
+      // call the signup method from this.props.auth
+      // and pass the username, email, and password
+      // display any errors if no result.token comes back
     }
   }
 

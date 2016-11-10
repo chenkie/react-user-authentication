@@ -37,12 +37,7 @@ export class Container extends React.Component {
           <Nav>
           </Nav>
           <Nav pullRight>
-            <LinkContainer to={'/home'}>
-              <NavItem onClick={this.logout.bind(this)}>Log Out</NavItem>
-            </LinkContainer>
-            <LinkContainer to={'/login'}>
-              <NavItem>Log In</NavItem>
-            </LinkContainer>
+            // provide login and logout links. Hint: use LinkContainer
           </Nav>
         </Navbar>
         <div className="container">
