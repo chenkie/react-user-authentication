@@ -2,6 +2,8 @@
 
 ## Protecting Routes Challenges
 
+* Add a method called `isAdmin` to the `AuthService` which checks whether the user has a `scope` of `admin` in their JWT
+* Conditionally hide and show the **Add Instructor** button in the **Instructor** component based on whether the user is authenticated and is an admin
 * Add a method called `requireAuth` in `src/views/routes.js` which checks whether the user is authenticated and redirects them to the **Login** route if they aren't
 * Add a method called `requireAdmin` in `src/views/routes.js` which checks whether the user is authenticated and is an admin and redirects them to the **Login** route if they aren't
 * Apply the `requireAuth` check to the **Profile** and **Instructor** routes via the `onEnter` event

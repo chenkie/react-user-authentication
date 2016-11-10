@@ -12,26 +12,27 @@ const auth = new AuthService()
 
 // onEnter callback to validate authentication in private routes
 const requireAuth = (nextState, replace) => {
-  if (!auth.isAuthenticated()) {
-    replace({ pathname: '/login' })
-  }
+  // check if the user is authenticated and redirect
+  // to the login route if they aren't
 }
 
 const requireAdmin = (nextState, replace) => {
-  if (!auth.isAuthenticated() || !auth.isAdmin()) {
-    replace({ pathname: '/login' })
-  }
+  // check if the user is authenticated and
+  // is an admin and redirect
+  // to the login route if they aren't
 }
 
 export const makeMainRoutes = () => {
+  // apply the requireAuth and requireAdmin checks to the last
+  // three routes
   return (
     <Route path="/" component={Container} auth={auth}>
       <IndexRedirect to="/home" />
       <Route path="home" component={Home} />
       <Route path="login" component={Login} />
-      <Route path="profile" component={Profile} onEnter={requireAuth} />
-      <Route path="instructor" component={Instructor} onEnter={requireAuth} />
-      <Route path="instructor/new" component={NewInstructor} onEnter={requireAdmin} />
+      <Route path="profile" component={Profile} />
+      <Route path="instructor" component={Instructor} />
+      <Route path="instructor/new" component={NewInstructor} />
     </Route>
   )
 }
