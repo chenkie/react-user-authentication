@@ -44,7 +44,7 @@ export class Login extends React.Component {
     event.preventDefault()
     const { username, email, password } = this.state
     if (username && email && password) {
-      this.props.auth.login(username, email, password)
+      this.props.auth.signup(username, email, password)
         .then(result => {
           if (!result.token) {
             this.setState({signupError: result.message})
