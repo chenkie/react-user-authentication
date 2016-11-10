@@ -1,0 +1,1 @@
+export const API_URL = 'https://user-authentication-api-ocokqryugz.now.sh/api'
