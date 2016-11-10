@@ -29,15 +29,8 @@ export default class AuthService extends EventEmitter {
     return this._doAuthentication('users', { username, email, password })
   }
 
-  isAuthenticated() {
-    // Checks if there is a saved token and it's still valid
-    const token = localStorage.getItem('token')
-    if (token) {
-      return !isTokenExpired(token)
-    } else {
-      return false
-    }
-  }
+  // add an isAuthenticated method to check whether
+  // the user's JWT has expired
 
   isAdmin() {
     return jwtDecode(this.getToken()).scope === 'admin'
