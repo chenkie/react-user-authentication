@@ -1,9 +1,9 @@
 # React Authentication for Front End Masters
 
-## Protecting Routes Challenges
+## User Profile Challenges
 
-* Make an authenticated `GET` request to the `/instructors` endpoint and display the returned resources in the **Instructors** view
-* Make an authenticated `POST` request to the `/instructors` endpoint to create a new instructor and return to the **Instructors** route to dispaly the newly created resource
+* Use the payload from the JWT to generate a user profile
+* Display the user's gravatar, username, and email, along with the full JWT payload in the **Profile** view
 
 ## Running the App
 
