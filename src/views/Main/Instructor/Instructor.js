@@ -32,7 +32,7 @@ export class Instructor extends React.Component {
     this.state = {
       instructors: []
     }
-    this.props.auth.fetch(`${API_URL}/instructors`).then(data => this.setState({ instructors: data }))
+    // fetch the list of instructors from the /instructors endpoint
   }
 
   onAddInstructorClick() {
