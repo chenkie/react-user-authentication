@@ -39,10 +39,6 @@ export default class AuthService extends EventEmitter {
     }
   }
 
-  isAdmin() {
-    return jwtDecode(this.getToken()).scope === 'admin'
-  }
-
   finishAuthentication(token) {
     localStorage.setItem('token', token)
   }
@@ -55,17 +51,6 @@ export default class AuthService extends EventEmitter {
   logout() {
     // Clear user token and profile data from localStorage
     localStorage.removeItem('token')
-  }
-
-  _checkStatus(response) {
-    // raises an error in case response status is not a success
-    if (response.status >= 200 && response.status < 300) {
-      return response
-    } else {
-      var error = new Error(response.statusText)
-      error.response = response
-      return error
-    }
   }
 
   fetch(url, options) {
