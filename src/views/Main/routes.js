@@ -10,18 +10,6 @@ import NewInstructor from './NewInstructor/NewInstructor'
 
 const auth = new AuthService()
 
-// onEnter callback to validate authentication in private routes
-const requireAuth = (nextState, replace) => {
-  // check if the user is authenticated and redirect
-  // to the login route if they aren't
-}
-
-const requireAdmin = (nextState, replace) => {
-  // check if the user is authenticated and
-  // is an admin and redirect
-  // to the login route if they aren't
-}
-
 export const makeMainRoutes = () => {
   // apply the requireAuth and requireAdmin checks to the last
   // three routes

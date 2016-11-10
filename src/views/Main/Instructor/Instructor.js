@@ -50,12 +50,9 @@ export class Instructor extends React.Component {
     return (
       <div>
         <h2>Front End Masters Instructors</h2>
-
-          // only show this button if the user is authenticated and is an admin
           <Button bsStyle="primary" onClick={this.onAddInstructorClick.bind(this)}>
             <i className="glyphicon glyphicon-plus"></i> Add Instructor
           </Button>
-
         <ul>
           {instructorList}
         </ul>
